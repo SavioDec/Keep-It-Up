@@ -1,0 +1,12 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.Aula01" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:colorBackground">#121212</item>
+        <item name="colorSurface">#1E1E1E</item>
+        <item name="colorOnBackground">#FFFFFF</item>
+        <item name="colorOnSurface">#E1E1E1</item>
+        <item name="colorPrimary">#BB86FC</item>
+        <item name="android:fontFamily">@font/synevariablefontwght</item>
+
+    </style>
+</resources>
