@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
 import com.example.aula01.databinding.BookDetailLayoutBinding
 
 // Variavel global provisória que guarda os dados detalhados de um livro. 
@@ -21,7 +22,7 @@ var bookDetail = BookDetail(
 )
 
 // Activity que gerencia a tela de Detalhes do Livro
-class BookDetailActivity : ComponentActivity() {
+class BookDetailActivity : AppCompatActivity() {
     // companion object funciona como um bloco para variáveis/métodos estáticos (disponíveis mesmo sem instanciar a classe)
     companion object {
         // Chave constante usada para acessar o ID do livro passado no Intent
@@ -48,6 +49,11 @@ class BookDetailActivity : ComponentActivity() {
 
         // Define a visualização raiz inflada na tela atual
         setContentView(binding.root)
+
+        setSupportActionBar(binding.bookDetailToolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
+
 
         // Preenche os campos textuais buscando as propriedades do objeto bookDetail
         binding.bookTitleTextView.text = bookDetail.name
@@ -91,6 +97,11 @@ class BookDetailActivity : ComponentActivity() {
         
         // Define o estado inicial da barra de progresso antes do usuário clicar nos botões
         updateReadingProgressViews()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 
     // Função que cria pílulas informativas (emblemas/badges) e as insere nas linhas LinearLayout do XML

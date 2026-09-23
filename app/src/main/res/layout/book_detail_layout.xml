@@ -4,8 +4,8 @@
     android:id="@+id/book_detail_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     >
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,6 +28,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/header_image_gradient" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/book_detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                app:navigationIcon="@drawable/chevron_backward_24px"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
